@@ -1,9 +1,75 @@
-# Ruby on Rails チュートリアルのサンプルアプリケーション
+# Micropost App - Ruby on Rails チュートリアル
 
-これは、次の教材で作られたサンプルアプリケーションです。
-[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-（第7版）
-[Michael Hartl](https://www.michaelhartl.com/) 著
+これは、[Ruby on Rails チュートリアル](https://railstutorial.jp/)（第7版）に基づいて作成されたマイクロポスト投稿アプリケーションです。
+
+## 概要
+
+TwitterライクなSNSアプリケーションを構築するチュートリアルプロジェクトです。ユーザー登録、ログイン、マイクロポスト（短文投稿）機能などを実装していきます。
+
+## 現在実装されている機能
+
+### 静的ページ
+- **ホームページ** (`/static_pages/home`) - アプリケーションのトップページ
+- **ヘルプページ** (`/static_pages/help`) - ヘルプ情報
+- **Aboutページ** (`/static_pages/about`) - アプリケーションについて
+- **Mikoページ** (`/static_pages/miko`) - 「にゃっはろー、さくらみこです」という挨拶を表示するページ
+
+### 技術スタック
+- Ruby 3.2.2
+- Rails 7.1.5.1
+- SQLite3（開発環境）
+- Minitest（テストフレームワーク）
+
+## セットアップ
+
+### 1. リポジトリのクローン
+```bash
+git clone https://github.com/[your-username]/micropost_app.git
+cd micropost_app
+```
+
+### 2. 依存関係のインストール
+```bash
+bundle install
+```
+
+### 3. データベースのセットアップ
+```bash
+rails db:create
+rails db:migrate
+```
+
+### 4. サーバーの起動
+```bash
+rails server
+# または
+rails s
+```
+
+ブラウザで http://localhost:3000 にアクセスしてください。
+
+## テストの実行
+
+すべてのテストを実行：
+```bash
+rails test
+```
+
+特定のテストファイルを実行：
+```bash
+rails test test/controllers/static_pages_controller_test.rb
+```
+
+## 開発状況
+
+現在は `static-pages` ブランチで開発中です。基本的な静的ページの実装が完了しています。
+
+### 今後の実装予定
+- [ ] ルートパスの設定
+- [ ] ユーザー登録・認証機能
+- [ ] マイクロポスト投稿機能
+- [ ] フォロー機能
+- [ ] 画像アップロード機能
 
 ## ライセンス
 
@@ -11,25 +77,7 @@
 ソースコードはMITライセンスとBeerwareライセンスのもとで公開されています。
 詳細は [LICENSE.md](LICENSE.md) をご覧ください。
 
-## 使い方
+## 参考資料
 
-このアプリケーションを動かす場合は、まずはリポジトリをフォークしてください。
-
-フォークしたリポジトリで、「Code」から「Codespaces」タブに移動し、
-「Create codespace on main」をクリックすると環境構築がスタートします。
-Railsサーバーが立ち上がり、シンプルブラウザが表示されるまでしばらくお待ちください。
-
-次に、データベースへのマイグレーションを実行します。
-
-```
-$ rails db:migrate
-```
-
-最後に、テストを実行してうまく動いているかどうか確認してください。
-
-```
-$ rails test
-```
-
-詳しくは、[*Ruby on Rails チュートリアル*](https://railstutorial.jp/)
-を参考にしてください。
+- [Ruby on Rails チュートリアル](https://railstutorial.jp/)
+- [Michael Hartl](https://www.michaelhartl.com/) 著
